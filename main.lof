@@ -1,0 +1,21 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Profits vs noise for the Tree-SBM model for three pricing strategies. Blue is the optimal profit, orange is the uniform profit, and green is the profit using block-level pricing. }}{17}{figure.caption.10}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces All partitions of the elements $\{1,2,3,4,5\}$. Each node is a partition and each represents two partitions are related by merging to blocks of the higher partition yields the lower partition. }}{20}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces a) Fractional Regret vs. noise of various pricing levels. Lower is better. b) How the best pricing level changes with noise.}}{32}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Profit as a function of partition fineness.}}{33}{figure.caption.15}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Spread of content in a large network, green nodes decide to share the content; red nodes decide not to share the content; (a) false content is less likely to be shared and the spread may go bust (b) true content is slightly more likely to be shared and may end up going viral.}}{41}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Equilibrium in the network. Here $\beta ^\ensuremath {\mathbf {T}}, \beta ^\ensuremath {\mathbf {F}}$ are obtained from $\delta $ through~\eqref {eq:share-probabilities}, and the proportion of true content $\Phi (\beta ^\ensuremath {\mathbf {T}}, \beta ^\ensuremath {\mathbf {F}})$ is given by~\eqref {eq:proportion-true}. An equilibrium corresponds to a value of $\delta $ for which the belief is consistent with spread dynamics.}}{43}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Various quantities of interest and the corresponding equilibrium metrics in the model.}}{46}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Various quantities of interest and the corresponding equilibrium metrics in the model.}}{48}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Various quantities of interest and the corresponding equilibrium metrics in the model.}}{48}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces (a) Sensitivity and (b) Specificity in the boom equilibrium as a function of the average veracity $p$ of new content for different values of $\kappa $.}}{49}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces (a) Average veracity of viral content $\delta $, (b) user engagement level, and (c) volume of viral content in the boom equilibrium as a function of the average veracity $p$ of new content for different values of $\kappa $.}}{49}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces (a) Average veracity of viral content $\delta $, (b) user engagement level, and (c) volume of viral content in the boom equilibrium as a function of the average veracity $p$ of new content for different values of $\kappa $.}}{50}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Equilibrium belief as a function of homophily for a variety of $\kappa $}}{58}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces $q^\ensuremath {\mathbf {T}}$ and $q^\ensuremath {\mathbf {F}}$ }}{59}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces (a) Sensitivity and (b) Specificity in the boom equilibrium as a function of the average veracity $p$ of new content for different populations. The meaning of each line is as follows: blue diamonds represent $\theta _{PT}=1$, purple triangles are $\theta _{IT}=1$, green circles are $\theta _{PF}=1$, yellow squares are $\theta _{IF}=1$. }}{60}{figure.caption.31}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

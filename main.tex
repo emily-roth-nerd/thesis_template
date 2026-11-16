@@ -1,0 +1,55 @@
+%% =====================================================================
+%%  main.tex — thesis root file
+%%  Compile with:  latexmk -pdf main.tex      (or pdflatex → bibtex → pdflatex ×2)
+%% =====================================================================
+\documentclass[12pt,oneside]{report}   % use twoside for printed/bound copies
+\usepackage{thesis}          % all packages, layout, theorem styles, macros
+
+%% ---------------------------------------------------------------------
+%%  Draft switches — comment out for the final version
+%% ---------------------------------------------------------------------
+\drafttrue                   % shows \todo notes and a "DRAFT" footer
+
+%% ---------------------------------------------------------------------
+%%  Title-page information
+%% ---------------------------------------------------------------------
+\thesistitle{Title of the Thesis:\\ }
+\thesisauthor{}
+\thesisdegree{Doctor of Philosophy}
+\thesisfield{Industrial and Systems Engineering}
+\thesisdepartment{Department of Industrial and Systems Engineering}
+\thesisuniversity{University of Minnesota}
+\thesisdate{November 2026}
+\thesisadvisor{Prof.\ Ankur Mani}
+
+%TC:macro \caption [text]
+
+\begin{document}
+
+%% ----------------------------- Front matter --------------------------
+\frontmatter
+\maketitlepage
+\input{frontmatter/abstract}
+\input{frontmatter/acknowledgments}
+\tableofcontents
+\listoffigures
+\listoftables
+\input{frontmatter/notation}
+
+%% ------------------------------ Main matter --------------------------
+\mainmatter
+\include{chapters/01-introduction}
+\include{chapters/02-pricing}
+\include{chapters/03-fun_with_partitions}
+\include{chapters/04-misinformation}
+\include{chapters/05-conclusion}
+
+%% ------------------------------ Back matter --------------------------
+\backmatter
+\bibliographystyle{plainnat}  % or: chicago, apalike, ecta (if you have ecta.bst)
+\bibliography{references}
+
+\appendixmatter
+\include{chapters/A-proofs}
+
+\end{document}

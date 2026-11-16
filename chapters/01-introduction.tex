@@ -1,0 +1,43 @@
+\chapter{Introduction}
+\label{ch:intro}
+
+% Write this chapter LAST (week of Nov 2 in the plan).
+% Target length: roughly 3,000--5,000 words.
+
+\section{Motivation}
+\label{sec:intro:motivation}
+
+\TODO{Open with the unifying question that connects the pricing and misinformation chapters.}
+
+\section{Overview of contributions}
+\label{sec:intro:contributions}
+
+This thesis makes the following contributions:
+\begin{enumerate}
+  \item \textbf{Pricing on networks under partition constraints and uncertainty} (\cref{ch:pricing}). [One-paragraph summary of the main result.]
+  \item \textbf{Misinformation spread} (\cref{ch:misinfo}). [One-paragraph summary of the main result.]
+\end{enumerate}
+
+\section{Related literature}
+\label{sec:intro:literature}
+
+\TODO{Survey the literature that both chapters share (network games, mechanism design, information design). Chapter-specific literature goes in each chapter.}
+
+\section{Common preliminaries}
+\label{sec:intro:prelims}
+
+% Put definitions used in BOTH chapters here, so you only state them once.
+Throughout, $\Gnet \in \R^{n\times n}$ denotes a directed network and
+$\spec(\cdot)$ the spectral radius. For $\gamma\,\spec(\Gnet) < 1$ the resolvent
+\begin{equation}
+  \Res = (\Id - \gamma \Gnet)^{-1} = \sum_{k \ge 0} \gamma^k \Gnet^k
+  \label{eq:resolvent}
+\end{equation}
+is well defined and entrywise nonnegative.
+
+\section{Outline of the thesis}
+\label{sec:intro:outline}
+
+\Cref{ch:pricing} studies \ldots\ \Cref{ch:misinfo} studies \ldots\
+\Cref{ch:conclusion} concludes. Proofs omitted from the main text are in
+\cref{app:proofs}.

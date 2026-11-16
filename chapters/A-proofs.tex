@@ -1,0 +1,365 @@
+\chapter{Omitted Proofs}
+\label{app:proofs}
+
+\section{Proofs for \texorpdfstring{\cref{ch:pricing}}{Chapter 2}}
+\label{app:proofs:pricing}
+
+\begin{proofof}{\cref{thm:pricing:optimal}}
+[Proof.]
+\end{proofof}
+
+\section{Proofs for \texorpdfstring{\cref{ch:misinfo}}{Chapter 3}}
+\label{app:proofs:misinfo}
+
+\subsection{Proof of Theorem \ref{thm:threshold} }
+\begin{proof}
+    We will make frequent use of the observation that $2 \hat{\delta}(x) -1>0$ if and only if $x > 1 -\delta$. This follows from simple algebra. 
+    \begin{enumerate}
+        \item{\textbf{Case 1: User is an impartial truthteller}} 
+         Here the expected payoff regardless of alignment is $2 \hat{\delta}(x) -1$ so they will share if and only if $s_i > 1-\delta$.  
+         \item{\textbf{Case 2: User is an partisan truthteller}} 
+         Here the payoff for sharing misaligned news is -1 so a partisan truthteller will never share misaligned news. But they will share aligned news if and only if $2 \hat{\delta}(x) -1>0$ which is true if and only if $s_i > 1 -\delta$. 
+         \item{\textbf{Case 3: User is an impartial fabulist}} 
+         Here the payoff for sharing aligned news is +1 so an impartial fabulist will always share aligned news. But they will share misaligned news if and only if $2 \hat{\delta}(x) -1>0$ which is true if and only if $s_i > 1 -\delta$. 
+        \item{\textbf{Case 4: User is an partisan fabulist}} 
+         Here the payoff for sharing aligned news is 1 so a partisan fabulist will always share aligned news. Their payoff for sharing misaligned news is -1 so it will never be shared.
+    \end{enumerate}
+     
+
+\end{proof}
+
+
+
+\section{Proofs for Section \ref{sec:spread-equilibrium} }
+
+
+
+\subsection{Proof of Theorem \ref{thm:delta_geq_p}}
+
+
+In any equilibrium, since $\delta = \Phi(\beta^\true(\delta), \beta^\false(\delta))$, we conclude  that $\delta \geq p$ holds if and only if $\Phi(\beta^\true(\delta), \beta^\false(\delta)) \geq p$. Using the definition~\eqref{eq:proportion-true} for $\Phi$, we conclude this is true in any bust equilibrium, since $\beta^\true(\delta) \geq \beta^\false(\delta)$ as shown in Proposition~\ref{prop:beta-monotonicity}. 
+
+Similarly, in a boom equilibrium, we obtain that $\delta \geq p$ holds if and only if $q^\true(\delta) \geq q^\false(\delta)$. To see why the latter condition holds, fix a boom equilibrium $\delta$. (Hereafter, we suppress the dependence on $\delta$ in the notation.) Define $f_\alpha(x) = 1 - \beta^\alpha + \beta^\alpha x^\kappa$ for $x \in [0,1]$ and $\alpha \in \{\true, \false\}$. Then, by definition $1- q^\alpha$ is the smallest fixed point of $f_\alpha$. Moreover, since $\beta^\true \geq \beta^\false$ from Proposition~\ref{prop:beta-monotonicity}, we have $f_\true \leq f_\false$. Thus, we get
+\begin{align*}
+    1 - q^\false = f_\false(1 - q^\false) \geq f_\true(1 - q^\false).
+\end{align*}
+The result then follows from the fact that $x < f_\true(x)$ for all $x < 1 - q^\true$, implying that $1 - q^\false \geq 1 -q^\true$, and hence $q^\true \geq q^\false$.
+
+
+
+\subsection{Proof of Theorem \ref{thm:kappa-thresholds}}\label{proof:kappa_thresholds}
+\begin{proof}{Proof}
+    For a boom equilibrium, it must be the case that $\kappa \beta^\true > 1$. From the expression for $\beta^\true$, we obtain that for any $\delta \in [0,1]$, $\beta^\true(\delta) \leq \beta^\true(1)  \leq \frac{1+\tm}{2}$. Thus, if $\kappa < \frac{2}{1 +\tm}$, we obtain $\kappa \beta^\true < 1$, implying that there cannot be a boom equilibrium. Similarly, we have $\beta^\false(\delta) \geq \beta^\false(0) = \frac{1-\tt}{2}$. Thus, if $\kappa > \frac{2}{1-\tt}$, we have $\kappa \beta^\false > 1$, implying that there cannot be a bust equilibrium. 
+\end{proof}
+
+\subsection{Proof of Theorem \ref{thm:equilibria-existence} }
+
+We break this theorem into 3 separate Lemmas. The Lemmas together form the proof of the theorem. We will then follow with the proofs of the Lemmas. The first lemma gives a condition for the boom equilibrium to exist. 
+
+
+\noindent \begin{lemma}\label{lemma:boom_exists}
+    When $\kappa > \frac{2}{1+\tm}$ there exists a boom equilibrium. 
+\end{lemma}
+\subsubsection{Proof of Lemma \ref{lemma:boom_exists}}
+\begin{proof}{Proof}
+This proof is divided into two cases $\kappa > \frac{2}{1-\tt}$ and $\kappa \in (\frac{2}{1+\tm}, \frac{2}{1-\tt})$. 
+
+\noindent\textbf{Case 1.} $\kappa > \frac{2}{1-\tt}$ 
+
+Using Equation \eqref{eq:share-probabilities}, we find that $\beta^\true(\delta) \geq \beta^\false(\delta) \geq \frac{1-\tt}{2}$ for all $\delta \in [0,1]$, and hence, we obtain that $\kappa \beta^\false(\delta) > 1$. In turn, this implies that for all $\delta \in [0,1]$, there exists positive solutions $q^\alpha(\delta)$ for $\alpha \in \{ \false, \true\}$ to \eqref{eq:viral-prob}.  Thus, from \eqref{eq:proportion-true}, we find that $\Pi(\delta) = \Phi(\beta^\false(\delta), \beta^\true(\delta)) = \frac{p q^\true(\delta) }{p q^\true(\delta) + (1-p)q^\false(\delta)}$ for all $\delta \in [0,1]$. Furthermore, it is straightforward to show that $q^\alpha(\delta)$ is continuous in $\delta$ for $\alpha \in \{\true, \false\}$. Thus, we obtain that $\Pi(\delta)$ is continuous, and furthermore, $\Pi(0) \geq 0$ and $\Pi(1) \leq 1$. Hence, using intermediate value theorem, we conclude that there exists a $\delta^* \in [0,1]$ such that $\Pi(\delta^*) = \delta^*$, and thus corresponds to an equilibrium. That this is a boom equilibrium follows from the fact that $\kappa \beta^\false(\delta^*) >1$.
+
+\noindent \textbf{Case 2. $\kappa \in (\frac{2}{1+\tm}, \frac{2}{1-\tt})$.}
+
+
+For some fixed small $\epsilon > 0$, let $\bar{\delta} \in (0,1)$ be defined as 
+\begin{align*}
+    \bar{\delta} =  \sqrt{ \frac{2}{\kappa (\tt + \tm)} - \frac{1-\tt}{\tt+\tm} + \epsilon}
+\end{align*}
+Then, we have
+\begin{align*}
+    \beta^\false(\bar{\delta}) &= \frac{1}{2} \left((1-\tt) + (\tt + \tm ) \bar{\delta}^2 \right) = \frac{1}{\kappa} + \epsilon \\
+    \beta^\true(\bar{\delta}) &=  \frac{1}{2} \left((1-\tt) + (\tt + \tm ) (1 - (1-\bar{\delta})^2) \right) \\
+    &> 1 - \tt + (\tt + \tm ) \bar{\delta} - \frac{1}{\kappa} \eqdef h(\kappa) 
+\end{align*}
+
+We define $\underline{q}^{\alpha}$ to be the value of $q^\alpha$ when $\overline{\delta}$ is the value of the prior belief Thus, we obtain $\kappa \beta^\false(\bar{\delta}) = 1 + \epsilon \kappa$ and $\kappa \beta^\true(\bar{\delta}) > \kappa h(\kappa) > 1$. To see this, note that 
+\begin{align*}
+    \kappa h(\kappa) = \kappa (1- \tt) - 1 + (\tt+\tm) \sqrt{\frac{2 \kappa}{\tt + \tm} - \frac{\kappa^2 (1-\tt)}{\tt + \tm} + \epsilon  } 
+\end{align*}
+So, $\kappa h(\kappa) > 1$ is equivalent to asking that 
+\begin{align*}
+    \sqrt{(\tt+\tm) (2 - \kappa ( 1- \tt)) \kappa} &> 2 - \kappa ( 1- \tt) \\ 
+    \kappa (\tt+\tm) (2-\kappa ( 1- \tt)) &> (2 - \kappa ( 1- \tt))^2 \\ 
+    \kappa (\tt + \tm) &> (2 - \kappa (1-\tt)) \\
+    \kappa ( 1 + \tm) &> 2 \\ 
+    \kappa &> \frac{2}{1+\tm}.
+\end{align*}
+Here, we can divide by $2 - \kappa ( 1- \tt) $ because it positive under our assumption that $\kappa > \frac{2}{1-\tt}$. 
+
+
+Given $\kappa \beta^\alpha(\bar{\delta}) > 1$, we conclude that there exists positive solutions $q^\alpha(\bar{\delta})$ to \eqref{eq:viral-prob}.
+\begin{align*}
+q^\alpha(\bar{\delta}) &= \beta^\alpha(\bar{\delta}) \left( 1 - (1 - q^\alpha(\bar{\delta}))^\kappa \right) \\   
+&= \beta^\alpha(\bar{\delta}) \left(  \kappa  q^\alpha(\bar{\delta}) - \frac{\kappa (\kappa -1)}{2} q^\alpha(\bar{\delta})^2  + O(q^\alpha(\bar{\delta})^3)\right).
+\end{align*}
+Thus, we get,  
+\begin{align*}
+    \frac{1}{\kappa \beta^\alpha (\bar{\delta})} =  1 - \frac{\kappa-1}{2} q^\alpha(\bar{\delta}) + O\left(q^\alpha(\bar{\delta})^2  \frac{1}{\kappa \beta^\alpha (\bar{\delta})}\right).
+\end{align*}
+
+From the fact that $\kappa \beta^\false(\bar{\delta}) = 1 + \epsilon \kappa$, we obtain that 
+\begin{align*}
+    q^\false(\bar{\delta})  = \frac{2\kappa }{\kappa -1 }  \epsilon  + O(\epsilon^2).
+\end{align*}
+
+
+The fixed point equation gives 
+\begin{align*}
+    q^\alpha = \beta^\alpha (1 - (1-q^\alpha)^\kappa)
+\end{align*}
+Thus, we have 
+\begin{align*}
+    \frac{q^\alpha }{1 - (1- q^\alpha)^\kappa} = \beta^\alpha.
+\end{align*}
+Let $H(x) \coloneq \frac{x}{1 - (1 -x)^\kappa}$ for $x \in (0,1)$, and let $H(0) = \lim_{x \downarrow 0} H(x) = \frac{1}{\kappa}$. Then, $H$ is continuous on $[0,1]$, with $H'(x) = \frac{(1 - (1 - x)^\kappa - \kappa (1 - x)^{(\kappa-1)} x)}{(1 - (1 - x)^\kappa)^2}$, which is non-negative for $\kappa > 1$ and non-positive for $\kappa < 1$. So, for $\kappa \neq 1$, $H$ is invertible. Thus, we get
+\begin{align*}
+    q^\alpha = H^{-1}(\beta^\alpha) \coloneq G(\beta^\alpha).
+\end{align*}
+Hence, we get
+\begin{align*}
+    q^\false(\bar{\delta}) &= G(\frac{1}{\kappa} + \epsilon)\\
+    &= G(\frac{1}{\kappa}) + \epsilon G'(\frac{1}{\kappa}) + O(\epsilon^2).
+\end{align*}
+Since $H(0) = \frac{1}{\kappa}$, we get $G(\frac{1}{\kappa}) = 0$. Furthermore, we get
+$G'(\frac{1}{\kappa}) = \frac{1}{H'(0)}$. 
+
+
+Finally, since $\kappa \beta^\true(\bar{\delta}) > \kappa h(\kappa) > 1$, we conclude that $q^\true(\bar{\delta}) > \underline{q}^\true > 0$ for all $\epsilon > 0$ where $\underline{q}^{\alpha}$ is the value of $q^\alpha$ when $\overline{\delta}$ is the value of the prior belief. Thus, we obtain,
+\begin{align*}
+\Pi(\bar{\delta}) &= \frac{pq^\true(\bar{\delta})}{pq^\true(\bar{\delta}) + (1- p) q^\false(\bar{\delta})}\\
+&> \frac{p \underline{q}^\true } {  p \underline{q}^\true + (1 - p) \frac{2\kappa}{\kappa -1} \epsilon + O(\epsilon^2) }\\
+&= 1 - \frac{ 2 \kappa(1- p)}{ p\underline{q}^\true (\kappa - 1) } \epsilon + O(\epsilon^2). 
+\end{align*}
+Thus, by choosing a small enough $\epsilon >0$, we obtain that $\Pi(\bar{\delta}) = 1 - O(\epsilon) > \bar{\delta}$. Moreover, we obtain $\beta^\alpha(\delta)  \geq \beta^\alpha(\bar{\delta})$ for all $\delta \in [\bar{\delta}, 1]$ and for each  $\alpha \in \{\true, \false\}$, implying that $q^\alpha(\delta)$ is well-defined, continuous and positive over $\delta \in [\bar{\delta}, 1]$. Thus, we obtain $\Pi(\delta)$ is continuous over $[\bar{\delta}, 1]$. Since $\Pi(1) \leq 1$ and $\Pi(\bar{\delta}) > \bar{\delta}$, we obtain the existence of a $\delta \in [\bar{\delta}, 1]$ with $\Pi(\delta)  = \delta$, thereby constituting a boom equilibrium.
+
+
+% \begin{align*}
+%     q^F (\epsilon) &=  \frac{2 (\tm + \tt) \epsilon^2}{1 + \tt} + O(\epsilon^3) \\ 
+%     q^T(\epsilon) &= \frac{4(\tm + \tt)}{1 + \tt}\epsilon + O(\epsilon^2)
+% \end{align*}
+% \kicomment{What does this correspond to? Seems like a different case, but no description of the case is provided? }
+
+
+% \ercomment{Special case:, $\kappa = \frac{2}{1-\tt}$, loose notes. These  are not probably edited yet.
+
+% The thing that must be checked carefully is that $\kappa \beta^\true (\bar{\delta}) > 1$. One can check that this is equivalent to asking that $\epsilon > 0 $ and that $\tm + \tt > 0$ i.e. both aren't 0. In this case, we should have everything else about the proof going through.
+
+% In the case where $\tm = \tt = 0$, then everyone in the population is an partisan fabulist. Note, that this is a simplified case. In order for content to go viral, we must have $\kappa > 2$. As a condition for this lemma, we have assumed that $\kappa > \frac{2}{1+\tm} = 2$. The last equality is specific to this case.  
+% } 
+
+
+
+
+
+% \erdelete{Thus, we obtain
+% \begin{align*}
+%     \Pi(\epsilon) &= \frac{p q^\true(\epsilon)}{p q^\true(\epsilon) + (1-p) q^\false(\epsilon)}\\
+%     &= \frac{2p}{2p + (1-p) \epsilon} + O(\epsilon^2) = 1 - \frac{(1-p)}{2p} \epsilon + O(\epsilon^2).
+% \end{align*}
+% This implies that for small enough $\epsilon > 0$, we have $\Pi(\epsilon) > \epsilon$. Since $\Pi(\delta) \leq 1$ for all $\delta > \epsilon$, we obtain by continuity that there exists a fixed point of $\Pi$ in $[\epsilon , 1]$. This fixed point must constitute a boom equilibrium since $\kappa \beta^\false(\delta) > 1$ for $\delta \in [\epsilon, 1]$.}
+\end{proof}
+
+
+
+The next establishes the conditions needed for a bust equilibrium to exist.  
+
+\noindent \begin{lemma}\label{lem:bust-necessary} A fixed point $\delta$ of $\Pi$ constitutes a bust equilibrium if and only if
+\begin{align*}
+    f(\delta) &\defeq \gamma ( \frac{\kappa}{2}-1 - \frac{\kappa \tt}{2})  
+    + \delta \left(1 + \gamma - \frac{\kappa}{2}  - \frac{\gamma \kappa}{2}  + \frac{\kappa \tt}{2}  + \frac{\gamma \kappa \tt}{2} \right)  \\
+     &+ \delta^2 \left( \frac{\gamma \kappa (\tm + \tt}{2} - \kappa ( \tt + \tm))\right) + \delta^3 \left( \frac{\kappa (\tm + \tt)}{2} - \frac{\gamma \kappa (\tm + \tt)}{2}\right) \\
+     &= 0
+\end{align*}
+and 
+$$g(\delta) \defeq  4 - \kappa \left( 2 (1-\tt) + 2 (\tm + \tt) ( 1- (1-\delta)^2) \right) > 0 $$
+where $\gamma = \frac{p}{1-p} \geq 0$.
+\end{lemma}
+\subsubsection{Proof of Lemma \ref{lem:bust-necessary}}
+\noindent Next, we prove Lemma~\ref{lem:bust-necessary}
+
+\begin{proof}{Proof}
+    Suppose that $\delta$ constitutes a bust equilibrium. This means that $\kappa \beta^\true < 1$ and $\Pi(\delta) = \delta$.  Algebra yields that $\kappa \beta^\true < 1$ is equivalent to $4 - \kappa \left( 2 (1-\tt) + 2 (\tm + \tt) ( 1- (1-\delta)^2) \right) > 0 $, and hence $g(\delta)  >0$.
+    Taking $\frac{\delta}{1-\delta}$ we get the following derivation
+    \begin{align*}
+        \frac{\delta}{1-\delta} &= \frac{p}{1-p}  \frac{1 - \kappa \beta^\false}{1 - \kappa \beta^\true} \\
+        \delta (1- \kappa \beta^\true) &=  \gamma (1-\delta) (1 - \kappa \beta^\false) \\ 
+        0 &=  \gamma (1-\delta) (1 - \kappa \beta^\false) - \delta (1- \kappa \beta^\true)\\ 
+        0 &=  \gamma (1-\delta) (1 -  \kappa ( \frac{1-\tt}{2} + \frac{1}{2}(\tt+\tm)\delta^2 ) - \delta (1- \kappa (\frac{1-\tt}{2} + (\tt+\tm)\delta - \frac{\tm + \tt}{2}\delta^2)  ))\\
+        &=  \gamma ( \frac{\kappa}{2}-1 - \frac{\kappa \tt}{2})  + 
+     \delta \left(1 + \gamma - \frac{\kappa}{2}  - \frac{\gamma \kappa}{2}  + \frac{\kappa \tt}{2}  + \frac{\gamma \kappa \tt}{2} \right)  \\
+     &+ \delta^2 ( \frac{\gamma \kappa (\tm + \tt)}{2} - \kappa ( \tt + \tm)) + \delta^3 ( \frac{\kappa (\tm + \tt)}{2} - \frac{\gamma \kappa (\tm + \tt)}{2})
+    \end{align*}
+And hence $f(\delta) = 0$?
+
+Working the other direction if we assume that $g(\delta)>0$ and $f(\delta)=0$ then $g(\delta) > 0$ yields $\kappa \beta^\true < 1$. Since $f(\delta) =0$ we know that $\frac{\delta}{1-\delta} = \frac{p (1+\kappa \beta^\false)}{(1-p) (1+\kappa \beta^\true)}$. Rearrangement yields that $\delta = \frac{ \frac{p}{1-\kappa \beta^\true}}{\frac{p}{1-\kappa \beta^\true} + \frac{1-p}{1-\kappa \beta^\false}} $ as desired.  
+\end{proof}
+
+Finally, we prove Lemma \ref{lem:bust-equilibrium} and show when bust equilibrium will exist. 
+
+
+
+Finally, this lemma shows that conditions need for a bust equilibrium to exist by Lemma \ref{lem:bust-necessary} in terms of the parameters of the system. 
+
+\begin{lemma}\label{lem:bust-equilibrium} For $\kappa  <  \frac{2}{1+\tm }$, there exists a bust equilibrium. For $\kappa = \frac{2}{1+\tm}$, there exists a (unique) bust equilibrium if and only if $\gamma < \frac{1}{2}$.  For $\kappa \in (\frac{2}{1+\tm}, \frac{2}{1-\tt})$, there exists no bust equilibrium if $\gamma \geq \frac{1}{2}$ or if $\gamma < \frac{1}{2}$ and $\kappa > M(\gamma, \tt, \tm)$; there is a unique bust equilibrium if $\gamma < \frac{1}{2}$ and $\kappa = M(\gamma, \tt, \tm)$; and there are two bust equilibria if $\gamma < \frac{1}{2}$ and $\frac{4}{3} < \kappa < M(\gamma,\tt, \tm)$, where $$M(\gamma, \tt, \tm) :=  \frac{2 (\gamma-1) (\gamma+1)^3}{\gamma^4 (\tm+1)+\gamma^3 (-6 \tm-8 \tt+2)+12 \gamma^2 (\tm+\tt)-2 \gamma (4 \tm+3 \tt+1)+\tt-1}.$$ Finally, for $\kappa \geq \frac{2}{1-\tt}$, there exists no bust equilibrium.
+\end{lemma}
+
+We will provide proofs for each of the Lemmas and will complete the proof of the Theorem.
+
+
+
+
+\subsubsection{Proof of Lemma \ref{lem:bust-equilibrium}}
+This proof involves applying Lemma \ref{lem:bust-necessary} to different ranges of $\kappa$ 
+
+
+\begin{proof}{Proof}
+\textbf{Case 1. $\kappa < \frac{2}{1+\tm}$.}  In this case, we have for any $\delta \in [0,1]$, 
+\begin{align*}
+    g(\delta) &= 4 - \kappa \left(2(1-\tt) + 2 ( \tm +\tt) (1- (1-\delta)^2) \right) \\ 
+    &\geq \frac{4}{1+\tm} \left(1 + \tm - (\tm + \tt) ( 1- (1-\delta)^2) \right) \\
+    &= \frac{4 (\tm +\tt)}{1+\tm} (1-\delta)^2 \geq 0 
+\end{align*}
+Thus, from Lemma \ref{lem:bust-necessary} it suffices to show the existence of $\delta \in [0,1]$ with $f(\delta) = 0$. To conclude this, observe that $f(0) = -\gamma ( 1 \frac{(1-\tt) \kappa}{2}) < 0$ when $\frac{2}{1-\tt} > \kappa$. This is true because for all $\delta$, $\frac{2}{1-\tt} > \frac{2}{1+\tm} > \kappa$.  In addition, $f(1) =  1 - \frac{\kappa}{2}(1 + \tm) > 0$. We know that that $f$ is continuous over $[0,1]$ therefore there must exist a root to this equation.
+
+We  get uniqueness by considering $f'(0)$ and $f'(1)$. $f'(0) = \frac{1}{2} (1+\gamma) ( 2 + \kappa (\tt - 1))>0$ and $f'(1) = -\frac{1}{2} (1+\gamma) (-2 + \kappa + \kappa \tm ) < 0$ which follows from the assumption $\kappa > \frac{2}{1+\tm}$.  $f'$ is a quadratic function so it has only one root. This coupled with the boundary conditions imply that $f$ has a unique root. $f'$ has an odd number of roots in the interval. Since $f'$ is quadratic there is a unique root. Hence $f$ is unimodal. This implies $f$ also has a unique root.
+
+
+% \kicomment{By analyzing this cubic, we may be able to show uniqueness.}
+%% Resolved 
+
+\textbf{Case 2. $\kappa = \frac{2}{1+\tm}$.} In this case, we can factorize $f(\delta)$ as
+\begin{align*}
+    f(\delta) = -\frac{ (\delta -1)^2  \left(\gamma + \delta (1-\gamma ) \right) (\tm + \tt)}{1 +\tm}
+\end{align*}
+Thus, $f$ has roots at $\delta =1$ and $\delta = \frac{\gamma}{1 - \gamma}$.  
+
+Note that $g(1) =  0$. This implies that if $\gamma \geq \frac{1}{2}$, there does not exist a bust equilibrium. On the other hand, if $\gamma < \frac{1}{2}$, we obtain $\frac{\gamma}{1 - \gamma} \in [0,1]$, and moreover, 
+\begin{align*}
+g\left(\frac{\gamma}{1 - \gamma}\right) & = \frac{4 (1-2 \gamma)^2 (\tm+\tt)}{(\gamma-1)^2 (\tt+1)} \\
+&=  \frac{4(\tm + \tt)}{\tt+1} (1-\frac{\gamma}{1-\gamma})^2 \geq 0    
+\end{align*}
+Thus, from Lemma \ref{lem:bust-necessary}, we conclude that if $\gamma < \frac{1}{2}$, there exist a (unique) bust equilibrium at $\delta = \frac{\gamma}{1 - \gamma}$.
+
+\textbf{Case 3. $\kappa \in (\frac{2}{1+\tm}, \frac{2}{1-\tt})$.} For $g(\delta) > 0$, we must have  
+\begin{align*}
+    \delta  < 1 - \sqrt{\frac{\kappa + \kappa \tm -2 }{\kappa (\tm + \tt)}} \defeq \delta_0.
+\end{align*}
+Now, $f(0) = -\gamma ( 1 -\frac{\kappa (1-\tt)}{2} ) < 0$  and $f(1) = 1 -\frac{\kappa (1+\tm)}{2} < 0$. It is straightforward to verify that $f(\delta_0) < 0$.
+
+
+Moreover, we have
+\begin{align*}
+    f'(\delta) = \frac{(1+\gamma)(2-\kappa + \kappa \tt)}{2} + (-2+\gamma) \kappa ( \tm + \tt) \delta + \frac{3}{2}  (1-\gamma) \kappa (\tm + \tt).
+\end{align*}
+We have $f'(0) > 0$ and $f'(1) = \frac{1+\gamma}{2} (2 - \kappa - \kappa \tm ) < 0$. Thus, there exists a (unique) $\delta_+ \in (0,1)$ with $f'(\delta_+) = 0$. We have the following expression for $\delta_+$:
+\begin{align*}
+    \delta_+ = \frac{2-\gamma}{3(1-\gamma)} - \frac{\sqrt{\frac{\gamma^2 (-\kappa)+12 \gamma^2-8 \gamma \kappa+11 \kappa-12}{(\gamma-1)^2 \kappa}}}{3 \sqrt{2}}
+\end{align*}
+% Now, we have 
+% \begin{align*}
+%     f(\delta_+) &=  \frac{1}{3} \left(\frac{\gamma-2}{\gamma-1}-\sqrt{\frac{\gamma^2 (\kappa (\tm+4 \tt-3)+6)-4 \gamma \kappa (\tm+\tt)+\kappa (4 \tm+\tt+3)-6}{(\gamma-1)^2 \kappa (\tm+\tt)}}\right) \\
+%     &\left(1-\frac{1}{2} \kappa \left((\tm+\tt) \left(1-\frac{1}{9} \left(\sqrt{\frac{\gamma^2 (\kappa (\tm+4 \tt-3)+6)-4 \gamma \kappa (\tm+\tt)+\kappa (4 \tm+\tt+3)-6}{(\gamma-1)^2 \kappa (\tm+\tt)}}+\frac{2-\gamma}{\gamma-1}+3\right)^2\right)-\tt+1\right)\right)\\
+%     &-\gamma \left(\sqrt{\frac{\gamma^2 (\kappa (\tm+4 \tt-3)+6)-4 \gamma \kappa (\tm+\tt)+\kappa (4 \tm+\tt+3)-6}{(\gamma-1)^2 \kappa (\tm+\tt)}}+\frac{2-\gamma}{\gamma-1}+3\right) \\
+%     % &\left(1-\frac{1}{2} K \left(\frac{1}{9} (\tm+T) \left(\sqrt{\frac{G^2 (K (M+4 T-3)+6)-4 G K (M+T)+K (4 M+T+3)-6}{(G-1)^2 K (M+T)}}+\frac{2-G}{G-1}\right)^2-T+1\right) \right)
+% \end{align*}
+
+Thus, we conclude that if $\delta_0 \leq \delta_+$, since $f(0) < 0$ and $f(\delta_0) <0$, we obtain $f(\delta) < 0$ for all $\delta < \delta_0$, and hence there is no bust equilibrium. Similarly, if $\delta_0 > \delta_+$ and $f(\delta_+) < 0$, then there is no equilibrium. On the other hand, if $\delta_0 > \delta_+$ and $f(\delta_+) > 0$, then there exists two solutions $\delta_1$ and $\delta_2$ in the interval $[0, \delta_0]$ with $f(\delta_i) = 0$ for $i =1,2$. Both these solutions correspond to a bust equilibrium. Finally, if $\delta_0 > \delta_+$ and $f(\delta_+) = 0$, then there exists a unique solution $\delta_+$ with $f(\delta_+) = 0$, again corresponding to a bust equilibrium.
+
+Through some algebra, it can be deduced that $\delta_0 \leq \delta_+$ if and only if $\gamma \geq \frac{1}{2}$. For $\gamma < \frac{1}{2}$, we get $f(\delta_+) > 0$ if and only if $\kappa < \frac{2 (\gamma-1) (\gamma+1)^3}{\gamma^4 (\tm+1)+\gamma^3 (-6 \tm-8 \tt+2)+12 \gamma^2 (\tm+\tt)-2 \gamma (4 \tm+3 \tt+1)+\tt-1} \leq \frac{2}{1-\tt} $. Denote by $M(\gamma, \tm, \tt) :=  \frac{2 (\gamma-1) (\gamma+1)^3}{\gamma^4 (\tm+1)+\gamma^3 (-6 \tm-8 \tt+2)+12 \gamma^2 (\tm+\tt)-2 \gamma (4 \tm+3 \tt+1)+\tt-1}$
+
+Summarizing, we obtain that there is no bust equilibrium if $\gamma \geq \frac{1}{2}$ or if $\gamma < \frac{1}{2}$ and $\kappa > M(\gamma, \tm, \tt)$; there is a unique bust equilibrium if $\gamma < \frac{1}{2}$ and $\kappa = M(\gamma, \tm, \tt)$; and there are two bust equilibria if $\gamma < \frac{1}{2}$ and $\kappa < M(\gamma, \tm, \tt)$.
+
+
+\textbf{Case 4. $\kappa \in [\frac{2}{1-\tt}, \infty)$.} Note that since $\beta^\alpha(\delta) \geq \frac{1-\tt}{2}$ for $\alpha \in \{\true, \false\}$ and $\delta \in [0,1]$, we have $\kappa \beta^\alpha(\delta) \geq 1$ for $\kappa \geq 4$, and hence a bust equilibrium cannot exist.
+    
+\end{proof}
+
+\section{Proofs for Section \ref{sec:generalization}}
+
+
+\subsection{Proof of Lemma \ref{lem:sign_equiv}}
+
+\TODO 
+
+
+
+\subsection{Proof of Theorem \ref{thm:non-det-kappa}}
+We work in cases dependent on $\ex{[\kappa]}$. Specifically, we will consider the cases of $\ex{[\kappa]} \geq \frac{2}{1-\tt}$ and $\ex{[\kappa]} \in (\frac{2}{1+\tm}, \frac{2}{1-\tt})$.
+
+\begin{proof}{Proof}
+\textbf{Case 1:} $\ex{[\kappa]} > \frac{2}{1-\tt}$. 
+
+Using Equation \eqref{eq:share-probabilities}, we find that $\beta^\true(\delta) \geq \beta^\false(\delta) \geq \frac{1-\tt}{2}$ for all $\delta \in [0,1]$, and hence, we obtain that $\ex{[\kappa]} \beta^\false(\delta) > 1$. In turn, this implies that for all $\delta \in [0,1]$, there exists positive solutions $q^\alpha(\delta)$ for $\alpha \in \{ \false, \true\}$ to \eqref{eq:viral-prob}. Thus, from \eqref{eq:proportion-true}, we find that $\Pi(\delta) = \Phi(\beta^\false(\delta), \beta^\true(\delta)) = \frac{p q^\true(\delta) }{p q^\true(\delta) + (1-p)q^\false(\delta)}$ for all $\delta \in [0,1]$. Furthermore, it is straightforward to show that $q^\alpha(\delta)$ is continuous in $\delta$ for $\alpha \in \{\true, \false\}$. Thus, we obtain that $\Pi(\delta)$ is continuous, and furthermore, $\Pi(0) \geq 0$ and $\Pi(1) \leq 1$. Hence, using intermediate value theorem, we conclude that there exists a $\delta^* \in [0,1]$ such that $\Pi(\delta^*) = \delta^*$, and thus corresponds to an equilibrium. That this is a boom equilibrium follows from the fact that $\ex{[\kappa]} \beta^\false(\delta^*) >1$.
+
+\textbf{Case 2:} $\ex{[\kappa]} \in (\frac{2}{1+\tm}, \frac{2}{1-\tt})$ 
+
+If we let $r^\alpha := 1-q^\alpha$, then we define $\phi(r) := \sum_{k=0}^\infty \pi_k (r^\alpha)^k $ as the probability generating function of $r$.
+
+From the boom-equilbrium equation written in terms of $r$ we can expand the right-hand side. 
+\begin{align*}
+    r^\alpha &= 1-\beta^\alpha + \beta^\alpha \phi(r) \\
+    r^\alpha &=  1 - \beta^\alpha + \beta^\alpha\left( \phi(1) + \phi'(1) (r^\alpha-1) +\phi''(1) \frac{(r^\alpha-1)^2}{2} + O((r^\alpha-1)^3) \right)  \\
+    &= 1 + \beta^\alpha \left( \phi'(1) + \phi''(1) \frac{r^\alpha-1}{2} + O((r^\alpha-1)^2) \right) (r^\alpha-1)\\
+    1 &= \beta^\alpha \left( \phi'(1) + \phi''(1) \frac{r^\alpha-1}{2} + O((r^\alpha-1)^2) \right) \\
+    r^\alpha &= \frac{2}{\phi''(1)} \left(\frac{1}{\beta^\alpha} - \phi'(1) - O((r^\alpha -1)^2) \right) + 1
+\end{align*}
+The fixed point equation gives
+\begin{equation}
+    q^\alpha = \beta^\alpha \left( 1 - \phi(r^\alpha) \right)
+\end{equation}
+
+Thus, we have
+\begin{equation}
+    \frac{q^\alpha}{1 - \phi(r)} = \beta^\alpha 
+\end{equation}
+
+Let $H(x) \defeq \frac{x}{1 - \phi(1-x)}$ for $x \in (0,1)$, and let $H(0) = \lim_{x \downarrow 0} = \frac{1}{\ex{[\kappa]}}$. Then, H is continuous on $[0,1]$, with $H'(x) = \frac{1 -\phi(1-x) - \phi'(1-x)x }{(1-\phi(1-x))^2}$, So, for $\kappa \neq 1$, H is invertible. Thus, we get
+\begin{equation}
+    q^\alpha = H^{-1} (\beta^\alpha) \defeq G(\beta^\alpha)
+\end{equation}
+
+From here, we  elect a small $\epsilon>0$ and take $\overline{\delta} := \sqrt{\frac{2}{\ex{[\kappa]} (\tt + \tm)} - \frac{1-\tt}{\tt + \tm} + \epsilon}$.  This yields
+\begin{align*}
+    \beta^\false(\bar{\delta}) &= \frac{1}{2} \left((1-\tt) + (\tt + \tm ) \bar{\delta}^2 \right) = \frac{1}{\ex{[\kappa]}} + \epsilon \\
+    \beta^\true(\bar{\delta}) &=  \frac{1}{2} \left((1-\tt) + (\tt + \tm ) (1 - (1-\bar{\delta})^2) \right) \\
+    &> 1 - \tt + (\tt + \tm ) \delta - \frac{1}{\ex{[\kappa]}} \eqdef h(\ex{[\kappa]}) 
+\end{align*}
+
+This implies that $\beta^\false(\overline{\delta}) \ex{[\kappa]} = 1 + \epsilon \ex{[\kappa]}$.
+Hence, we get
+\begin{align*}
+    q^\false (\overline{\delta}) &= G(\frac{1}{\ex{[\kappa]}} + \epsilon) \\
+    &= G(\frac{1}{\ex{[\kappa]}})   + \epsilon G'(\frac{1}{\ex{[\kappa]}}) + O(\epsilon^2) 
+\end{align*}
+
+Since $H(0) = \frac{1}{\ex{[\kappa]}}$, we get $G(\ex{[\kappa]}) = 0$. Furthermore, we get $G'(\ex{[\kappa]}) = \frac{1}{H'(0)}$. 
+
+% \ercomment{
+% [Written loosely] the first derivative of the numerator is $\phi''(1-x)x $ and the 2nd is $\phi'''(1-x) x + \phi''(1-x) $. At $x=0$, we have $\phi''(1) $.
+% For the denomator, we have $2 (1- \phi(1-x)) \phi'(1-x)$ and the 2nd is $2 \phi'(1-x)^2 + 2 (1-\phi(1-x)) \phi''(1-x)$. At $x=0$, we get $2\phi'(1)^2$
+
+% This yields that $q^\false = \frac{2 \phi'(1)^2 }{\phi''(1)} \epsilon + O(\epsilon^2)$. 
+% Letting $\underline{q} $ be the value of $q$ when $\beta = h(\ex{[\kappa]})$ we have that $q^T > \underline{q} > 0$ for all $\epsilon$. }
+This yields: 
+\begin{align*}
+    \Pi(\overline{\delta}) &= \frac{pq^T (\overline{\delta})}{pq^T \overline{\delta} + (1-p) q^F (\overline{\delta})} \\
+    &> \frac{p \underline{q}}{p \underline{q} + (1-p) \frac{2\phi'(1)^2}{\phi''(1)} \cdot \epsilon \ex{[\kappa]}  + O(\epsilon^2) } \\ 
+    &= 1 - \frac{2\phi'(1)^2}{\phi''(1) p \underline{q}}   \epsilon \ex{[\kappa]}  + O(\epsilon^2) 
+\end{align*}
+Thus, by choosing a small enough $\epsilon >0$, we obtain that $\Pi(\bar{\delta}) = 1 - O(\epsilon) > \bar{\delta}$. Moreover, we obtain $\beta^\alpha(\delta)  \geq \beta^\alpha(\bar{\delta})$ for all $\delta \in [\bar{\delta}, 1]$ and for each  $\alpha \in \{\true, \false\}$, implying that $q^\alpha(\delta)$ is well-defined, continuous and positive over $\delta \in [\bar{\delta}, 1]$. Thus, we obtain $\Pi(\delta)$ is continuous over $[\bar{\delta}, 1]$. Since $\Pi(1) \leq 1$ and $\Pi(\bar{\delta}) > \bar{\delta}$, we obtain the existence of a $\delta \in [\bar{\delta}, 1]$ with $\Pi(\delta)  = \delta$, thereby constituting a boom equilibrium.
+
+
+Thus, by choosing a small enough $\epsilon >0$, we obtain that $\Pi(\bar{\delta}) = 1 - O(\epsilon) > \bar{\delta}$. Moreover, we obtain $\beta^\alpha(\delta)  \geq \beta^\alpha(\bar{\delta})$ for all $\delta \in [\bar{\delta}, 1]$ and for each  $\alpha \in \{\true, \false\}$, implying that $q^\alpha(\delta)$ is well-defined, continuous and positive over $\delta \in [\bar{\delta}, 1]$. Thus, we obtain $\Pi(\delta)$ is continuous over $[\bar{\delta}, 1]$. Since $\Pi(1) \leq 1$ and $\Pi(\bar{\delta}) > \bar{\delta}$, we obtain the existence of a $\delta \in [\bar{\delta}, 1]$ with $\Pi(\delta)  = \delta$, thereby constituting a boom equilibrium.
+
+
+\end{proof}

@@ -1,0 +1,18 @@
+# Fdb version 4
+["pdflatex"] 1794240244.55334 "/Users/emilyroth/PhD/thesis_template/chapters/latex_figures/pricing-pipeline.tex" "pricing-pipeline.pdf" "pricing-pipeline" 1794240244.77106 2
+  "/Users/emilyroth/PhD/thesis_template/chapters/latex_figures/pricing-pipeline.tex" 1794240244.03098 2847 488e55a703c0007247950c7fd92b1e5c ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm" 1136768653 1332 f817c21a1ba54560425663374f1b651a ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm" 1136768653 1336 3125ccb448c1a09074e3aa4a9832f130 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
+  "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1713317303 8221422 fb3151b54f76d1222e73e4327bf1890d ""
+  "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
+  "pricing-pipeline.aux" 1794240244.55292 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "pricing-pipeline.tex" 1794240244.03098 2847 488e55a703c0007247950c7fd92b1e5c ""
+  (generated)
+  "pricing-pipeline.aux"
+  "pricing-pipeline.log"
+  "pricing-pipeline.pdf"
+  (rewritten before read)

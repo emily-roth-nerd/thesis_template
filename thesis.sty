@@ -1,0 +1,318 @@
+%% =====================================================================
+%%  thesis.sty — layout, packages, theorem environments and macros
+%%  Check your graduate school's formatting guide and adjust the
+%%  "LAYOUT" section (margins, spacing, page numbering) to match it.
+%% =====================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{thesis}[2026/09/25 Thesis style]
+
+%% ---------------------------------------------------------------------
+%%  Fonts and encoding
+%% ---------------------------------------------------------------------
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{xfrac}
+\IfFileExists{lmodern.sty}%
+  {\RequirePackage{lmodern}\RequirePackage{microtype}}%
+  {\RequirePackage[expansion=false]{microtype}}  % fallback for minimal TeX installs
+
+%% ---------------------------------------------------------------------
+%%  LAYOUT  (most grad schools: 1in margins, 1.5–2 line spacing)
+%% ---------------------------------------------------------------------
+\RequirePackage[letterpaper, margin=1in, left=1.25in]{geometry}  % 1.25in left for binding
+\RequirePackage{setspace}
+%\onehalfspacing
+\doublespacing
+\RequirePackage{fancyhdr}
+\RequirePackage{emptypage}
+
+%% ---------------------------------------------------------------------
+%%  Mathematics
+%% ---------------------------------------------------------------------
+\RequirePackage{amsmath, amssymb, mathtools, bm}
+\RequirePackage{amsthm}
+
+%% ---------------------------------------------------------------------
+%%  Figures, tables, algorithms
+%% ---------------------------------------------------------------------
+\RequirePackage{graphicx}
+\graphicspath{{figures/}}
+\RequirePackage{caption, subcaption}
+\captionsetup{font=small, labelfont=bf}
+\RequirePackage{booktabs}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, bending, calc, shapes, backgrounds, fit}
+\RequirePackage{algorithm, algpseudocode}
+\RequirePackage[shortlabels]{enumitem}
+\setlist{itemsep=2pt, topsep=4pt}
+\RequirePackage{wrapfig}
+%% ---------------------------------------------------------------------
+%%  Bibliography (natbib: \citet{key} → "Author (Year)", \citep{key} → "(Author, Year)")
+%% ---------------------------------------------------------------------
+\RequirePackage[round, authoryear]{natbib}
+
+%% ---------------------------------------------------------------------
+%%  Draft mode and to-do notes
+%% ---------------------------------------------------------------------
+\newif\ifdraft
+\draftfalse
+\RequirePackage{xcolor}
+\AtBeginDocument{%
+  \ifdraft
+    \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}%
+      \fancyfoot[R]{\scriptsize\color{gray}DRAFT \today}%
+      \renewcommand{\headrulewidth}{0pt}}%
+    \pagestyle{plain}%
+  \else
+    \pagestyle{plain}%
+  \fi}
+\RequirePackage[colorinlistoftodos, textsize=footnotesize]{todonotes}
+\setlength{\marginparwidth}{0.9in}
+\newcommand{\TODO}[1]{\ifdraft\todo[inline, color=orange!25]{#1}\fi}
+\newcommand{\NOTE}[1]{\ifdraft\todo[color=blue!15]{#1}\fi}
+
+%% ---------------------------------------------------------------------
+%%  Hyperlinks (load late) and clever references (load after hyperref)
+%% ---------------------------------------------------------------------
+\RequirePackage[hidelinks, bookmarksnumbered]{hyperref}
+\RequirePackage[capitalise, noabbrev]{cleveref}
+
+%% ---------------------------------------------------------------------
+%%  Theorem environments — numbered within chapter, one shared counter
+%% ---------------------------------------------------------------------
+%% Plain amsthm syntax (works on every TeX installation and editor).
+%% Defined after cleveref is loaded, so \cref prints the right names.
+\theoremstyle{plain}          % italic body: results
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}     % upright body: definitions and assumptions
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}         % upright, lighter heading: remarks
+\newtheorem{remark}[theorem]{Remark}
+
+%% Names used by \cref / \Cref (cleveref knows most of these already;
+%% set explicitly so every environment is labelled correctly)
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{proposition}{Proposition}{Propositions}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{corollary}{Corollary}{Corollaries}
+\crefname{conjecture}{Conjecture}{Conjectures}
+\crefname{definition}{Definition}{Definitions}
+\crefname{assumption}{Assumption}{Assumptions}
+\crefname{example}{Example}{Examples}
+\crefname{remark}{Remark}{Remarks}
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+
+%% "Proof of Theorem X" for proofs deferred to the appendix:
+%%   \begin{proofof}{\cref{thm:main}} ... \end{proofof}
+\newenvironment{proofof}[1]{\begin{proof}[Proof of #1]}{\end{proof}}
+
+%% ---------------------------------------------------------------------
+%%  Front/main/back matter for the report class
+%% ---------------------------------------------------------------------
+\newcommand{\frontmatter}{\cleardoublepage\pagenumbering{roman}}
+\newcommand{\mainmatter}{\cleardoublepage\pagenumbering{arabic}}
+\newcommand{\backmatter}{\cleardoublepage
+  \addcontentsline{toc}{chapter}{Bibliography}}
+\newcommand{\appendixmatter}{\cleardoublepage\appendix}
+
+%% Unnumbered chapter that still appears in the table of contents
+\newcommand{\frontchapter}[1]{%
+  \chapter*{#1}\addcontentsline{toc}{chapter}{#1}\markboth{#1}{#1}}
+
+%% ---------------------------------------------------------------------
+%%  Title page
+%% ---------------------------------------------------------------------
+\def\@thesistitle{}\def\@thesisauthor{}\def\@thesisdegree{}
+\def\@thesisfield{}\def\@thesisdepartment{}\def\@thesisuniversity{}
+\def\@thesisdate{}\def\@thesisadvisor{}
+\newcommand{\thesistitle}[1]{\def\@thesistitle{#1}\title{#1}}
+\newcommand{\thesisauthor}[1]{\def\@thesisauthor{#1}\author{#1}}
+\newcommand{\thesisdegree}[1]{\def\@thesisdegree{#1}}
+\newcommand{\thesisfield}[1]{\def\@thesisfield{#1}}
+\newcommand{\thesisdepartment}[1]{\def\@thesisdepartment{#1}}
+\newcommand{\thesisuniversity}[1]{\def\@thesisuniversity{#1}}
+\newcommand{\thesisdate}[1]{\def\@thesisdate{#1}}
+\newcommand{\thesisadvisor}[1]{\def\@thesisadvisor{#1}}
+
+\newcommand{\maketitlepage}{%
+  \begin{titlepage}
+    \begin{singlespace}
+    \centering
+    \vspace*{1in}
+    {\LARGE\bfseries \@thesistitle\par}
+    \vspace{0.6in}
+    {\large by\par}\vspace{0.15in}
+    {\Large \@thesisauthor\par}
+    \vfill
+    A dissertation submitted in partial fulfillment\\
+    of the requirements for the degree of\\[0.1in]
+    {\large \@thesisdegree}\\[0.1in]
+    in \@thesisfield\\[0.3in]
+    \@thesisdepartment\\
+    \@thesisuniversity\\[0.3in]
+    \@thesisdate
+    \vfill
+    Advisor: \@thesisadvisor
+    \vspace*{0.5in}
+    \end{singlespace}
+  \end{titlepage}
+  \setcounter{page}{2}}
+
+%% ---------------------------------------------------------------------
+%%  NOTATION MACROS — define once here, use everywhere, so notation
+%%  stays consistent across chapters and can be changed in one place.
+%% ---------------------------------------------------------------------
+% Sets and number systems
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\prob}{\mathbb{P}}
+
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+
+% Linear algebra
+\newcommand{\T}{^{\top}}                       % transpose: A\T
+\newcommand{\one}{\mathbf{1}}                  % all-ones vector
+\newcommand{\Id}{I}                            % identity matrix
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\spec}{\rho}                       % spectral radius
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\inner}{\langle}{\rangle}
+\newcommand{\vect}[1]{\bm{#1}}
+
+% Networks and pricing (edit to match your papers)
+\newcommand{\Gnet}{G}                          % known network
+\newcommand{\Nnet}{N}                          % random network
+\newcommand{\Galpha}{\Gnet(\alpha)}            % interpolated network
+\newcommand{\Res}{B}                           % resolvent
+\newcommand{\Resa}{\Res(\alpha)}               % B(alpha)
+\newcommand{\Part}{R}                          % partition matrix
+\newcommand{\pstar}{p^{*}}                     % optimal price
+\newcommand{\proj}[2]{P_{#1}^{#2}}             % projection, e.g. \proj{R}{M}
+
+
+% Probability / information
+\newcommand{\KL}[2]{D_{\mathrm{KL}}\!\left(#1 \,\middle\|\, #2\right)}
+\newcommand{\Info}{\mathcal{I}}
+\newcommand{\Ent}{H}
+
+% Misc
+\newcommand{\eg}{e.g.,\ }
+\newcommand{\ie}{i.e.,\ }
+\newcommand{\defeq}{\coloneqq}
+\newcommand{\eqdef}{=:}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+
+
+\newcommand{\true}{\ensuremath{\mathbf{T}}}
+\newcommand{\false}{\ensuremath{\mathbf{F}}}
+
+\newcommand{\IT}{\textit{IT}}
+\newcommand{\IF}{\textit{IF}}
+\newcommand{\PT}{\textit{PT}}
+\newcommand{\PF}{\textit{PF}}
+\renewcommand{\tt}{\theta_T}
+\newcommand{\tm}{\theta_M}
+
+\newcommand{\alg}{\ensuremath{\mathbf{A}}}
+\newcommand{\mal}{\ensuremath{\mathbf{M}}}
+\newcommand{\rhof}{\frac{\rho}{\|G+G^T\|}}
+\newcommand{\bo}{\mathbf{1}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\rhoM}[1]{\frac{\rho}{\|#1+#1^T\|}}
+\newcommand{\G}{G}
+\newtheorem{claim}{Claim}
+\newtheorem{statement}{Statement}
+\newcommand{\ex}{\mathbb{E}}
+\newcommand{\ev}[1]{\mathbb{E}\left[#1\right]}
+\renewcommand{\ex}[1]{\mathbb{E}\left[ #1\right] }
+\newcommand{\tb}[1]{\mathbf{#1}}
+\newcommand{\branch}[1][\alpha]{\ex{\kappa } \beta^{#1} } 
+
+\newcommand\leatom{\mathrel{\ensurestackMath{%
+  \stackengine{-.5ex}{\lessdot}{-}{U}{c}{F}{F}{S}}}}
+
+
+\newcommand{\bgen}{\ex{B_\mathcal{F}}}
+\newcommand{\Sign}{\mathcal{S}}
+
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{amsmath}
+\usepackage{longtable}
+% \usepackage{wrapfig}
+\usepackage{bbm}
+%\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{textcomp}
+\usepackage{tikz}
+%\usepackage{minted}
+\usepackage{stackengine}
+%\usepackage{subcaption}
+% \usepackage{subfig}
+\usetikzlibrary{graphs}
+%\usetikzlibrary {graphs.standard}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{color-edits}
+\addauthor{er}{magenta}
+\usepackage{bookmark}
+
+\usepackage{booktabs}
+
+%\setcitestyle{authoryear}
+
+%\usepackage{acm-ec-26}
+\usepackage{mathtools}
+% \usepackage{natbib}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{float}
+
+
+\allowdisplaybreaks
+
+\newcommand{\Ha}{H(\alpha)}
+\renewcommand{\S}{S}
+
+\newcommand{\commidx}[2]{\mathcal{C}_{#1}(#2)}
+\newcommand{\comblock}[2]{M_{#1}(#2)}
+%\newcommand{\pricealpha}{\tb{p}^*(H(\alpha), R)}
+%\newcommand{\pricezero}{\tb{p}^*(H(0)^*, R)}
+\newcommand{\pricealpha}{\tb{p}(\alpha,R)}
+\newcommand{\pricezero}{\tb{p}(0,R)}
+
+\newcommand{\pricealphaprime}{\tb{p}(\alpha, R')}
+
+\newcommand{\pricezeroprime}{\tb{p}(0, R')}
+\newcommand{\Bkalpha}{B(\alpha)}
+
+%\settopmatter{ printacmref=true}
+
+
+% \newcommand{\defeq}{\ensuremath{:=}}
+\endinput

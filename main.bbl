@@ -1,0 +1,247 @@
+\begin{thebibliography}{48}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Acemoglu et~al.(2021)Acemoglu, Ozdaglar, and Siderius]{acemoglu2021model}
+Daron Acemoglu, Asuman Ozdaglar, and James Siderius.
+\newblock A model of online misinformation.
+\newblock Technical report, National Bureau of Economic Research, 2021.
+
+\bibitem[Akbarpour et~al.(2018)Akbarpour, Malladi, and Saberi]{akbarpour2018}
+Mohammad Akbarpour, Suraj Malladi, and Amin Saberi.
+\newblock Just a few seeds more: Value of network information for diffusion.
+\newblock \emph{Available at SSRN:\\ https://ssrn.com/abstract=3062830}, 2018.
+
+\bibitem[Arthur et~al.(2009)Arthur, Motwani, Sharma, and Xu]{arthur2009pricing}
+David Arthur, Rajeev Motwani, Aneesh Sharma, and Ying Xu.
+\newblock Pricing strategies for viral marketing on social networks.
+\newblock In \emph{WINE 09' The 5th International Workshop on Internet and Network Economics}, pages 101--112, 2009.
+
+\bibitem[Ball et~al.(2011)Ball, Karrer, and Newman]{ball2011efficient}
+Brian Ball, Brian Karrer, and Mark~EJ Newman.
+\newblock Efficient and principled method for detecting communities in networks.
+\newblock \emph{Physical Review E—Statistical, Nonlinear, and Soft Matter Physics}, 84\penalty0 (3):\penalty0 036103, 2011.
+
+\bibitem[Banerjee et~al.(2013)Banerjee, Chandrasekhar, Duflo, and Jackson]{banerjee2013diffusion}
+Abhijit Banerjee, Arun~G Chandrasekhar, Esther Duflo, and Matthew~O Jackson.
+\newblock The diffusion of microfinance.
+\newblock \emph{Science}, 341\penalty0 (6144):\penalty0 1236498, 2013.
+
+\bibitem[Bapna and Umyarov(2015)]{bapna2015your}
+Ravi Bapna and Akhmed Umyarov.
+\newblock Do your online friends make you pay? {A} randomized field experiment on peer influence in online social networks.
+\newblock \emph{Management Science}, 61\penalty0 (8):\penalty0 1902--1920, 2015.
+
+\bibitem[Baron et~al.(2022)Baron, Hu, and Malekian]{Baron-2022}
+Opher Baron, Ming Hu, and Azarakhsh Malekian.
+\newblock Technical note—revenue volatility under uncertain network effects.
+\newblock \emph{Operations Research}, 70\penalty0 (4):\penalty0 2254--2263, 2022.
+
+\bibitem[Bloch and Qu{\'e}rou(2013)]{bloch2013pricing}
+Francis Bloch and Nicolas Qu{\'e}rou.
+\newblock Pricing in social networks.
+\newblock \emph{Games and economic behavior}, 80:\penalty0 243--261, 2013.
+
+\bibitem[Bloch et~al.(2018)Bloch, Demange, and Kranton]{bloch2018rumors}
+Francis Bloch, Gabrielle Demange, and Rachel Kranton.
+\newblock Rumors and social networks.
+\newblock \emph{International Economic Review}, 59\penalty0 (2):\penalty0 421--448, 2018.
+
+\bibitem[Blondel et~al.(2008)Blondel, Guillaume, Lambiotte, and Lefebvre]{blondel2008fast}
+Vincent~D Blondel, Jean-Loup Guillaume, Renaud Lambiotte, and Etienne Lefebvre.
+\newblock Fast unfolding of communities in large networks.
+\newblock \emph{Journal of statistical mechanics: theory and experiment}, 2008\penalty0 (10):\penalty0 P10008, 2008.
+
+\bibitem[Bonacich(1987)]{bonacich1987power}
+Phillip Bonacich.
+\newblock Power and centrality: A family of measures.
+\newblock \emph{American journal of sociology}, 92\penalty0 (5):\penalty0 1170--1182, 1987.
+
+\bibitem[Campbell(2013)]{campbell2013word}
+Arthur Campbell.
+\newblock Word-of-mouth communication and percolation in social networks.
+\newblock \emph{American Economic Review}, 103\penalty0 (6):\penalty0 2466--2498, 2013.
+
+\bibitem[Candogan et~al.(2012)Candogan, Bimpikis, and Ozdaglar]{candogan2012optimal}
+Ozan Candogan, Kostas Bimpikis, and Asuman Ozdaglar.
+\newblock Optimal pricing in networks with externalities.
+\newblock \emph{Operations Research}, 60\penalty0 (4):\penalty0 883--905, 2012.
+
+\bibitem[Chamley(2004)]{chamley2004rational}
+Christophe Chamley.
+\newblock \emph{Rational Herds: Economic Models of Social Learning}.
+\newblock Cambridge University Press, 2004.
+
+\bibitem[Chen et~al.(2018)Chen, Zenou, and Zhou]{chen2018competitive}
+Ying-Ju Chen, Yves Zenou, and Junjie Zhou.
+\newblock Competitive pricing strategies in social networks.
+\newblock \emph{The RAND Journal of Economics}, 49\penalty0 (3):\penalty0 672--705, 2018.
+
+\bibitem[Chung et~al.(2004)Chung, Lu, and Vu]{chung2004spectra}
+Fan Chung, Linyuan Lu, and Van Vu.
+\newblock The spectra of random graphs with given expected degrees.
+\newblock \emph{Internet Mathematics}, 1\penalty0 (3):\penalty0 257--275, 2004.
+
+\bibitem[Cohen and Harsha(2020)]{cohen2013designing}
+Maxime Cohen and Pavithra Harsha.
+\newblock Designing price incentives in a network with social interactions.
+\newblock \emph{Manufacturing and Service Operations Management}, 22\penalty0 (2):\penalty0 292--309, 2020.
+
+\bibitem[Crapis et~al.(2016)Crapis, Ifrach, Maglaras, and Scarsini]{crapis2016monopoly}
+Davide Crapis, Bar Ifrach, Costis Maglaras, and Marco Scarsini.
+\newblock Monopoly pricing in the presence of social learning.
+\newblock \emph{Management Science}, 63\penalty0 (11):\penalty0 3586--3608, 2016.
+
+\bibitem[Dasaratha and He(2019)]{dasaratha2019aggregative}
+Krishna Dasaratha and Kevin He.
+\newblock Aggregative efficiency of bayesian learning in networks, 2019.
+
+\bibitem[Domingos and Richardson(2001)]{domingos2001mining}
+Pedro Domingos and Matt Richardson.
+\newblock Mining the network value of customers.
+\newblock In \emph{Proceedings of the Seventh ACM SIGKDD International Conference on Knowledge Discovery and Data Mining}, pages 57--66. ACM, 2001.
+
+\bibitem[Du et~al.(2016)Du, Cooper, and Wang]{du2016optimal}
+Chenhao Du, William~L Cooper, and Zizhuo Wang.
+\newblock Optimal pricing for a multinomial logit choice model with network effects.
+\newblock \emph{Operations Research}, 64\penalty0 (2):\penalty0 441--455, 2016.
+
+\bibitem[Fainmesser and Galeotti(2015)]{fainmesser2015pricing}
+Itay~P Fainmesser and Andrea Galeotti.
+\newblock Pricing network effects.
+\newblock \emph{The Review of Economic Studies}, 83\penalty0 (1):\penalty0 165--198, 2015.
+
+\bibitem[Fan(1949)]{fan1949theorem}
+Ky~Fan.
+\newblock On a theorem of weyl concerning eigenvalues of linear transformations i.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 35\penalty0 (11):\penalty0 652--655, 1949.
+
+\bibitem[Farrell and Saloner(1985)]{farrell1985standardization}
+Joseph Farrell and Garth Saloner.
+\newblock Standardization, compatibility, and innovation.
+\newblock \emph{RAND Journal of Economics}, 16\penalty0 (1):\penalty0 70--83, 1985.
+
+\bibitem[Fiol and Garriga(2009)]{fiol2009number}
+Miguel~Angel Fiol and Ernest Garriga.
+\newblock Number of walks and degree powers in a graph.
+\newblock \emph{Discrete Mathematics}, 309\penalty0 (8):\penalty0 2613--2614, 2009.
+
+\bibitem[Haghpanah et~al.(2013)Haghpanah, Immorlica, Mirrokni, and Munagala]{haghpanah2013optimal}
+Nima Haghpanah, Nicole Immorlica, Vahab Mirrokni, and Kamesh Munagala.
+\newblock Optimal auctions with positive network externalities.
+\newblock \emph{ACM Transactions on Economics and Computation}, 1\penalty0 (2):\penalty0 13, 2013.
+
+\bibitem[Hartline et~al.(2008)Hartline, Mirrokni, and Sundararajan]{hartline2008optimal}
+Jason Hartline, Vahab Mirrokni, and Mukund Sundararajan.
+\newblock Optimal marketing strategies over social networks.
+\newblock In \emph{Proceedings of the 17th International Conference on World Wide Web}, pages 189--198. ACM, 2008.
+
+\bibitem[Huang et~al.(2019)Huang, Mani, and Wang]{huang2019value}
+Jiali Huang, Ankur Mani, and Zizhuo Wang.
+\newblock The value of price discrimination in large random networks.
+\newblock In \emph{Proceedings of the 2019 ACM Conference on Economics and Computation}, pages 243--244, 2019.
+
+\bibitem[Huang et~al.(2022)Huang, Mani, and Wang]{huang2022value}
+Jiali Huang, Ankur Mani, and Zizhuo Wang.
+\newblock The value of price discrimination in large social networks.
+\newblock \emph{Management Science}, 68\penalty0 (6):\penalty0 4454--4477, 2022.
+
+\bibitem[Huang et~al.(2024)Huang, Strack, and Tamuz]{huang2024learning}
+Wanying Huang, Philipp Strack, and Omer Tamuz.
+\newblock Learning in repeated interactions on networks.
+\newblock \emph{Econometrica}, 92\penalty0 (1):\penalty0 1--27, 2024.
+
+\bibitem[Jackson and Storms(2017)]{Jackson-Storms-2017}
+Matthew~O. Jackson and Evan~C. Storms.
+\newblock Behavioral communities and the atomic structure of networks, 2017.
+\newblock URL \url{https://arxiv.org/abs/1710.04656}.
+
+\bibitem[Jackson et~al.(2022)Jackson, Malladi, and McAdams]{jackson2022learning}
+Matthew~O Jackson, Suraj Malladi, and David McAdams.
+\newblock Learning through the grapevine and the impact of the breadth and depth of social networks.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 119\penalty0 (34):\penalty0 e2205549119, 2022.
+
+\bibitem[Karrer and Newman(2011)]{karrer2011stochastic}
+Brian Karrer and Mark~EJ Newman.
+\newblock Stochastic blockmodels and community structure in networks.
+\newblock \emph{Physical Review E—Statistical, Nonlinear, and Soft Matter Physics}, 83\penalty0 (1):\penalty0 016107, 2011.
+
+\bibitem[Katz and Shapiro(1985)]{katz1985network}
+Michael~L Katz and Carl Shapiro.
+\newblock Network externalities, competition, and compatibility.
+\newblock \emph{The American Economic Review}, 75\penalty0 (3):\penalty0 424--440, 1985.
+
+\bibitem[Kempe et~al.(2003)Kempe, Kleinberg, and Tardos]{kempe2003maximizing}
+David Kempe, Jon Kleinberg, and {\'E}va Tardos.
+\newblock Maximizing the spread of influence through a social network.
+\newblock In \emph{Proceedings of the Ninth ACM SIGKDD International Conference on Knowledge Discovery and Data Mining}, pages 137--146. ACM, 2003.
+
+\bibitem[Kranton and McAdams(2024)]{kranton2024social}
+Rachel Kranton and David McAdams.
+\newblock Social connectedness and information markets.
+\newblock \emph{American Economic Journal: Microeconomics}, 16\penalty0 (1):\penalty0 33--62, 2024.
+
+\bibitem[Krivelevich and Sudakov(2003)]{krivelevich2003largest}
+Michael Krivelevich and Benny Sudakov.
+\newblock The largest eigenvalue of sparse random graphs.
+\newblock \emph{Combinatorics, Probability and Computing}, 12\penalty0 (1):\penalty0 61--72, 2003.
+
+\bibitem[Levin and Peres(2017)]{levin2017counting}
+David~A Levin and Yuval Peres.
+\newblock Counting walks and graph homomorphisms via {M}arkov chains and importance sampling.
+\newblock \emph{The American Mathematical Monthly}, 124\penalty0 (7):\penalty0 637--641, 2017.
+
+\bibitem[Mostagir and Siderius(2022)]{mostagir2022learning}
+Mohamed Mostagir and James Siderius.
+\newblock Learning in a post-truth world.
+\newblock \emph{Management Science}, 68\penalty0 (4):\penalty0 2860--2868, 2022.
+
+\bibitem[Mostagir and Siderius(2023)]{mostagir2023social}
+Mohamed Mostagir and James Siderius.
+\newblock Social inequality and the spread of misinformation.
+\newblock \emph{Management Science}, 69\penalty0 (2):\penalty0 968--995, 2023.
+
+\bibitem[Muchnik et~al.(2013)Muchnik, Aral, and Taylor]{muchnik2013social}
+Lev Muchnik, Sinan Aral, and Sean~J Taylor.
+\newblock Social influence bias: A randomized experiment.
+\newblock \emph{Science}, 341\penalty0 (6146):\penalty0 647--651, 2013.
+
+\bibitem[Pastor-Satorras and Vespignani(2001)]{pastor2001epidemic}
+Romualdo Pastor-Satorras and Alessandro Vespignani.
+\newblock Epidemic spreading in scale-free networks.
+\newblock \emph{Physical Review Letters}, 86\penalty0 (14):\penalty0 3200, 2001.
+
+\bibitem[Preciado and Rahimian(2017)]{preciado2017moment}
+Victor~M Preciado and M~Amin Rahimian.
+\newblock Moment-based spectral analysis of random graphs with given expected degrees.
+\newblock \emph{IEEE Transactions on Network Science and Engineering}, 4\penalty0 (4):\penalty0 215--228, 2017.
+
+\bibitem[Richardson and Domingos(2002)]{richardson2002mining}
+Matthew Richardson and Pedro Domingos.
+\newblock Mining knowledge-sharing sites for viral marketing.
+\newblock In \emph{Proceedings of the Eighth ACM SIGKDD International Conference on Knowledge Discovery and Data Mining}, pages 61--70. ACM, 2002.
+
+\bibitem[Rogers(1976)]{rogers1976new}
+Everett~M Rogers.
+\newblock New product adoption and diffusion.
+\newblock \emph{Journal of Consumer Research}, 2\penalty0 (4):\penalty0 290--301, 1976.
+
+\bibitem[Sikder et~al.(2020)Sikder, Smith, Vivo, and Livan]{sikder2020minimalistic}
+Orowa Sikder, Robert~E Smith, Pierpaolo Vivo, and Giacomo Livan.
+\newblock A minimalistic model of bias, polarization and misinformation in social networks.
+\newblock \emph{Scientific reports}, 10\penalty0 (1):\penalty0 5493, 2020.
+
+\bibitem[Wang and Wang(2017)]{wang2016consumer}
+Ruxian Wang and Zizhuo Wang.
+\newblock Consumer choice models with endogenous network effects.
+\newblock \emph{Management Science}, 63\penalty0 (11):\penalty0 3944--3960, 2017.
+
+\bibitem[Zhou and Chen(2018)]{zhou2018optimal}
+Junjie Zhou and Ying-Ju Chen.
+\newblock Technical note — {O}ptimal pricing with sequential consumption in networks.
+\newblock \emph{Operations Research}, 66\penalty0 (5):\penalty0 1218--1226, 2018.
+
+\end{thebibliography}

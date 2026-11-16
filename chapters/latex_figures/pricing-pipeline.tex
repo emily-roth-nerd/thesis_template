@@ -1,0 +1,231 @@
+\begin{tikzpicture}[
+  node distance = 2.0cm,
+  %--- main pipeline boxes ---
+  box/.style = {
+    draw = black!65, line width = 0.8pt,
+    fill = blue!8,
+    rounded corners = 5pt,
+    minimum width  = 3.0cm,
+    minimum height = 1.5cm,
+    align = center,
+    font = \small
+  },
+  %--- algorithm sub-step ---
+  subbox/.style = {
+    draw = orange!70!black, line width = 0.7pt, dashed,
+    fill = orange!7,
+    rounded corners = 4pt,
+    minimum width  = 2.8cm,
+    minimum height = 1.1cm,
+    align = center,
+    font = \footnotesize
+  },
+  arr/.style  = {-{Stealth[length=7pt]}, line width=0.9pt},
+  darr/.style = {-{Stealth[length=6pt]}, line width=0.7pt, dashed, orange!70!black}
+]
+
+%% ---- MAIN PIPELINE ----
+
+\node[box] (pstar) {
+  \textbf{Solve unconstrained}\\[3pt]
+  $p^* = {(B+B^T)}^{-1}(aB + cB^\top)\mathbf{1}$
+};
+
+\node[box, right=2.0cm of pstar] (sort) {
+  \textbf{Sort nodes by} $p^*$\\[3pt]
+  $p^*_{\sigma(1)} \le \cdots \le p^*_{\sigma(n)}$
+};
+
+\node[box, right=2.0cm of sort] (partition) {
+  \textbf{Optimal interval}\\
+  \textbf{partition of order} $k$
+};
+
+\node[box, right=2.0cm of partition] (output) {
+  \textbf{Prices}\\[3pt]
+  one per interval\\
+  $\hat{p}_{G_1},\dots,\hat{p}_{G_k}$
+};
+
+%% ---- ARROWS ----
+
+\draw[arr] (pstar)     -- (sort);
+\draw[arr] (sort)      -- (partition);
+\draw[arr] (partition) -- (output);
+
+%% ---- ALGORITHM SUB-STEP ----
+
+\node[subbox, below = 1.1cm of partition] (alg) {
+  \textbf{Algorithm}\\[2pt]
+  $O(kn^2)$ DP\\
+  over cut-points\\
+  $\sigma(i_1), \sigma(i_2), \dots$
+};
+
+\draw[darr] (alg) -- (partition);
+
+%% ---- INTERVAL ILLUSTRATION (below the number line) ----
+
+% \begin{scope}[yshift = -4.0cm]
+
+%   % axis
+%   \draw[->, line width=0.6pt, gray!60] (-0.3,0) -- (10.5,0);
+%   \node[gray!60, font=\footnotesize] at (10.7,0) {$p^*$};
+
+%   % example sorted values (7 nodes)
+%   \foreach \x/\lbl in {
+%       0.6/$p^*_{\sigma(1)}$,
+%       1.5/$p^*_{\sigma(2)}$,
+%       2.6/$p^*_{\sigma(3)}$,
+%       4.1/$p^*_{\sigma(4)}$,
+%       5.3/$p^*_{\sigma(5)}$,
+%       7.2/$p^*_{\sigma(6)}$,
+%       8.9/$p^*_{\sigma(7)}$
+%   }{
+%     \fill[blue!50!black] (\x, 0) circle (2.2pt);
+%     \node[font=\tiny, below=4pt] at (\x, 0) {\lbl};
+%   }
+
+%   % cut points (k=3 intervals)
+%   \foreach \cx in {3.35, 6.25}{
+%     \draw[red!70!black, line width=0.9pt, dashed] (\cx,-0.35) -- (\cx,0.35);
+%   }
+
+%   % interval braces / shading
+%   \foreach \xa/\xb/\clr/\lbl in {
+%       0.3/3.2/blue!15/{$G_1$},
+%       3.5/6.1/green!15/{$G_2$},
+%       6.4/9.1/orange!18/{$G_3$}
+%   }{
+%     \fill[\clr, rounded corners=2pt, opacity=0.5]
+%       (\xa,-0.18) rectangle (\xb, 0.18);
+%     \node[font=\footnotesize\bfseries] at ({(\xa+\xb)/2}, 0.42) {\lbl};
+%   }
+
+%   % caption
+%   \node[align=center, font=\footnotesize\itshape, gray!70!black]
+%     at (5.1,-0.85)
+%     {Nodes sorted by $p^*$; vertical dashed lines are the optimal cut-points ($k = 3$)};
+
+% \end{scope}
+
+\end{tikzpicture}
+
+
+% \definecolor{Col1}{HTML}{4E79A7}   % blue   – group 1
+% \definecolor{Col2}{HTML}{F28E2B}   % orange – group 2
+% \definecolor{Col3}{HTML}{E15759}   % red    – group 3
+
+% \begin{tikzpicture}[
+%   pbox/.style={
+%     draw=gray!60, rounded corners=3pt,
+%     minimum width=3.0cm, minimum height=1.1cm,
+%     fill=blue!8, font=\small, align=center},
+%   dpbox/.style={
+%     draw=gray!55, rounded corners=3pt,
+%     minimum width=3.5cm, minimum height=1.3cm,
+%     fill=orange!7, font=\small, align=center},
+%   harr/.style={-{Stealth[length=5pt]}, semithick, gray!70},
+%   varr/.style={-{Stealth[length=4pt]}, thin, gray!45, dashed},
+%   bpanel/.style={draw=gray!25, fill=gray!5, rounded corners=3pt, line width=0.5pt},
+% ]
+
+% %% ═══════════════════════════════════════════════════════════════════════════
+% %% Layer 1 – pipeline boxes  (y = 0)
+% %% ═══════════════════════════════════════════════════════════════════════════
+% \node[pbox] (A) at (0,   0) {Compute\\$p^*$};
+% \node[pbox] (B) at (4.5, 0) {Sort $p^*$\\(ascending)};
+% \node[pbox] (C) at (9.0, 0) {Partition into\\$k$ intervals};
+
+% \draw[harr] (A) -- (B)
+%   node[midway, above, font=\scriptsize, text=gray]{rank nodes};
+% \draw[harr] (B) -- (C)
+%   node[midway, above, font=\scriptsize, text=gray]{$\arg\max_{\mathcal{R}}$};
+
+% %% ═══════════════════════════════════════════════════════════════════════════
+% %% Layer 2 – DP callout  (y ≈ −2.0)
+% %%   centred between B and C (x = 6.75), width 3.5 cm → x ∈ [5.0, 8.5]
+% %%   height 1.3 cm → y ∈ [−1.35, −2.65]
+% %%   B arrow (x=4.5) passes 0.5 cm left of box;  C arrow (x=9.0) 0.5 cm right
+% %% ═══════════════════════════════════════════════════════════════════════════
+% \node[dpbox] (DP) at (6.75, -2.00) {
+%   Optimal $k$-interval partition by DP: $O(n^2 k)$\\[3pt]
+%   {\scriptsize$V(i,j)=\max_{l<i}\!\bigl[V(l,j{-}1)+\pi_{l+1:i}\bigr]$}
+% };
+
+% %% Thin note-line from B→C arrow (gap at x=6.75) down to DP box
+% \draw[thin, gray!40, -{Stealth[length=3pt]}]
+%   (6.75, -0.14) -- (DP.north);
+
+% %% ═══════════════════════════════════════════════════════════════════════════
+% %% Layer 3 – price-vector bar charts  (base y = −5.20, scale = 1.60)
+% %%   6 nodes · bar 0.28 cm · stride 0.34 cm · span 1.98 cm · centred at cx
+% %%
+% %%   Example prices (∈ [0,1]):
+% %%     node order :  0.70  0.20  1.00  0.40  0.15  0.60
+% %%     sorted asc :  0.15  0.20  0.40  0.60  0.70  1.00
+% %%     k=3 groups (2 nodes each)
+% %% ═══════════════════════════════════════════════════════════════════════════
+
+% %% ── Background panels ──────────────────────────────────────────────────────
+% \foreach \cx in {0, 4.5, 9.0}{
+%   \draw[bpanel] ({\cx-1.18}, -5.42) rectangle ({\cx+1.18}, -3.10);
+% }
+
+% %% ── A: unsorted p* ──────────────────────────────────────────────────────────
+% \foreach \i/\h in {0/0.70, 1/0.20, 2/1.00, 3/0.40, 4/0.15, 5/0.60}{
+%   \fill[gray!55, draw=gray!30, line width=0.4pt]
+%     ({-0.99+\i*0.34}, -5.20)
+%     rectangle ({-0.71+\i*0.34}, {-5.20+\h*1.60});
+% }
+
+% %% ── B: sorted ascending ─────────────────────────────────────────────────────
+% \foreach \i/\h in {0/0.15, 1/0.20, 2/0.40, 3/0.60, 4/0.70, 5/1.00}{
+%   \fill[gray!55, draw=gray!30, line width=0.4pt]
+%     ({3.51+\i*0.34}, -5.20)
+%     rectangle ({3.79+\i*0.34}, {-5.20+\h*1.60});
+% }
+
+% %% ── C: colored by interval ──────────────────────────────────────────────────
+% \foreach \i/\h/\col in {
+%     0/0.15/Col1,  1/0.20/Col1,
+%     2/0.40/Col2,  3/0.60/Col2,
+%     4/0.70/Col3,  5/1.00/Col3}{
+%   \fill[\col!75, draw=\col!40, line width=0.4pt]
+%     ({8.01+\i*0.34}, -5.20)
+%     rectangle ({8.29+\i*0.34}, {-5.20+\h*1.60});
+% }
+
+% %% ── Interval bracket lines and labels (panel C) ─────────────────────────────
+% %% G1: bars 0–1 → x ∈ [8.01, 8.63]
+% %% G2: bars 2–3 → x ∈ [8.69, 9.31]
+% %% G3: bars 4–5 → x ∈ [9.37, 9.99]
+% \draw[Col1!90, line width=1.5pt] (8.01, -5.36) -- (8.63, -5.36);
+% \draw[Col2!90, line width=1.5pt] (8.69, -5.36) -- (9.31, -5.36);
+% \draw[Col3!90, line width=1.5pt] (9.37, -5.36) -- (9.99, -5.36);
+% \node[font=\scriptsize, text=Col1!90] at (8.32, -5.57) {$\mathcal{G}_1$};
+% \node[font=\scriptsize, text=Col2!90] at (9.00, -5.57) {$\mathcal{G}_2$};
+% \node[font=\scriptsize, text=Col3!90] at (9.68, -5.57) {$\mathcal{G}_3$};
+
+% %% ── Panel sub-labels (A, B) ─────────────────────────────────────────────────
+% \node[font=\scriptsize\itshape, text=gray!70] at ( 0,  -5.57) {node order};
+% \node[font=\scriptsize\itshape, text=gray!70] at (4.5, -5.57) {ascending $p^*$};
+
+% %% ── Shared price axis ───────────────────────────────────────────────────────
+% \draw[-{Stealth[length=3pt]}, gray!50, thin]
+%   (-1.32, -5.20) -- (-1.32, -3.28)
+%   node[above, font=\tiny, text=gray]{$p_i^*$};
+% \draw[gray!35, thin] (-1.37, -5.20) -- (-1.27, -5.20);
+% \node[left, font=\tiny, text=gray] at (-1.37, -5.20) {$c$};
+% \draw[gray!35, thin] (-1.37, -3.60) -- (-1.27, -3.60);
+% \node[left, font=\tiny, text=gray] at (-1.37, -3.60) {$a$};
+
+% %% ═══════════════════════════════════════════════════════════════════════════
+% %% Connecting arrows  (pipeline → bar chart panels)
+% %% A and B pass left/right of the DP box;  C passes to its right
+% %% ═══════════════════════════════════════════════════════════════════════════
+% \draw[varr] (A.south) -- (0,   -3.12);
+% \draw[varr] (B.south) -- (4.5, -3.12);
+% \draw[varr] (C.south) -- (9.0, -3.12);
+
+% \end{tikzpicture}
